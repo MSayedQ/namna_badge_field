@@ -21,8 +21,8 @@ class BadgeTextFelidOverlayBody extends StatefulWidget {
   final double top, left;
   final Function() onClose;
   final FocusScopeNode overlayNode;
-  final List<OptionData>? optionsHintList;
-  final Function(OptionData option) onSelected;
+  final List<BadgeData>? optionsHintList;
+  final Function(BadgeData option) onSelected;
 
   final double order;
 
@@ -31,9 +31,9 @@ class BadgeTextFelidOverlayBody extends StatefulWidget {
 }
 
 class __OptionTextFelidOverlay extends State<BadgeTextFelidOverlayBody> {
-  List<OptionData> options = [];
+  List<BadgeData> options = [];
 
-  Future<List<OptionData>> initList() async {
+  Future<List<BadgeData>> initList() async {
     var list = widget.optionsHintList;
     return options = list ?? [];
   }
@@ -148,7 +148,7 @@ class __OptionTextFelidOverlay extends State<BadgeTextFelidOverlayBody> {
   _buildOverlayItem(
     Color color, {
     required BuildContext context,
-    required OptionData option,
+    required BadgeData option,
     required int index,
   }) {
     //?

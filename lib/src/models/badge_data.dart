@@ -1,14 +1,13 @@
-
 import 'dart:convert';
 
-class OptionData {
-  OptionData({this.id, required this.name});
+class BadgeData {
+  BadgeData({this.id, required this.name});
 
   final int? id;
   final String name;
 
   @override
-  bool operator ==(covariant OptionData other) {
+  bool operator ==(covariant BadgeData other) {
     if (identical(this, other)) return true;
 
     return other.id == id && other.name == name;
@@ -28,8 +27,8 @@ class OptionData {
     return result;
   }
 
-  factory OptionData.fromMap(Map<String, dynamic> map) {
-    return OptionData(
+  factory BadgeData.fromMap(Map<String, dynamic> map) {
+    return BadgeData(
       id: map['id']?.toInt(),
       name: map['name'] ?? '',
     );
@@ -37,6 +36,6 @@ class OptionData {
 
   String toJson() => json.encode(toMap());
 
-  factory OptionData.fromJson(String source) =>
-      OptionData.fromMap(json.decode(source));
+  factory BadgeData.fromJson(String source) =>
+      BadgeData.fromMap(json.decode(source));
 }
